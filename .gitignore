@@ -1,0 +1,22 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Oo]ut/
+[Ll]ogs/
+
+# User-specific files
+[Uu]serSettings/
+
+# Visual Studio / Rider / Jetbrains files
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.userprefs
+
+# OS generated files
+.DS_Store
+Thumbs.db
