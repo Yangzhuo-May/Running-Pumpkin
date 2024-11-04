@@ -30,6 +30,8 @@ public class GroundSpawner : MonoBehaviour
 
     private void Start()
     {
+        nextSpawnPointGround = new Vector3(0, 0, 15);
+        nextSpawnPointBack = new Vector3(0, 0,15);
         for (int i = 0; i < 5; i++)
         {
             SpawnTile();

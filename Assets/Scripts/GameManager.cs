@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     //public Text scoreTest;
     public Button GamePlayButton;
     public TextMeshProUGUI  scoreTest; 
-
-
+    public PlayerControl playerControl;
 
     public void IncrementScore()
     {
@@ -29,13 +28,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerControl = GameObject.FindWithTag("Player").GetComponent<PlayerControl>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        float playerSpeed = playerControl.speed;
+        if (Input.GetKeyDown(KeyCode.R) && playerSpeed == 0)
             {
                 SceneManager.LoadScene("Game"); 
             }

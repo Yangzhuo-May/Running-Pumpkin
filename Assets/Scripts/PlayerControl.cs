@@ -31,6 +31,8 @@ public class PlayerControl : MonoBehaviour
     public GameObject gameoverScreen;
     public AudioClip crashSound; 
 
+    private bool isPlayed = false;
+
     void Awake()
     {
         xAxis = actions.FindActionMap("Player").FindAction("Move");
@@ -69,10 +71,11 @@ public class PlayerControl : MonoBehaviour
         MoveZ();
         MoveX();
 
-        if (transform.position.y < -5)
-        {
-            SceneManager.LoadScene("Game");
-        }
+        transform.position = new Vector3(
+        Mathf.Clamp(transform.position.x, -4.5f, 4.5f), 
+        transform.position.y, 
+        transform.position.z
+    );
 
     }
 
@@ -126,7 +129,11 @@ public class PlayerControl : MonoBehaviour
             speed = 0f;
             jumpForce = 0f;
             gameoverScreen.SetActive(true);
-            AudioSource.PlayClipAtPoint(crashSound, transform.position);
+            if(!isPlayed)
+            {
+                AudioSource.PlayClipAtPoint(crashSound, transform.position);
+            }
+            isPlayed = true;
         }
     }
 
