@@ -2281,9 +2281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3415c9455c177a249a27545ea051c370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 6345272310158677828, guid: bc20963bb0bb51649bc181cf02954269, type: 3}
-  BackgroundTile_1: {fileID: 8523866832401388927, guid: 461392e7341a9814c9f3cc91ed81d5e5, type: 3}
-  BackgroundTile_2: {fileID: 238843586613188516, guid: 5809cc9268972854894e8aeab188bc14, type: 3}
+  groundTile: {fileID: 2883735814579744724, guid: bc20963bb0bb51649bc181cf02954269, type: 3}
+  backgroundTiles:
+  - {fileID: 2957215513868058561, guid: 461392e7341a9814c9f3cc91ed81d5e5, type: 3}
+  - {fileID: 5603889048869122381, guid: 5809cc9268972854894e8aeab188bc14, type: 3}
 --- !u!4 &1015511219
 Transform:
   m_ObjectHideFlags: 0

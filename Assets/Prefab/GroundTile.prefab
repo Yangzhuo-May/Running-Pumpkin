@@ -825,8 +825,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6627061888244781807}
-  - component: {fileID: 4149545342938188024}
-  - component: {fileID: 8453493699810275082}
+  - component: {fileID: 8132040273863375608}
+  - component: {fileID: 6104582834224972665}
+  - component: {fileID: 8296870745723906599}
   m_Layer: 0
   m_Name: GroundTile
   m_TagString: Untagged
@@ -859,7 +860,37 @@ Transform:
   - {fileID: 7093462706448850734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4149545342938188024
+--- !u!114 &8132040273863375608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345272310158677828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec76a3a703de2b4699ab7ff9ceb405f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundTile: {fileID: 6345272310158677828}
+--- !u!114 &6104582834224972665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345272310158677828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e3dc0360bb61a43acee3e66ca9b2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfCoins: 6
+  coin: {fileID: 2773067964999226825, guid: ab1232e3186f9af40b9222731643f6c8, type: 3}
+  obstacles:
+  - {fileID: -2049920938280980869, guid: 49ddc982dac09ad448c092d5aa96d6e5, type: 3}
+  - {fileID: 1283145110452514693, guid: 59d6c1a45d2b3d94ba3a3c78911f34ad, type: 3}
+--- !u!65 &8296870745723906599
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -880,22 +911,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 20}
   m_Center: {x: 0, y: 0, z: 10}
---- !u!114 &8453493699810275082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345272310158677828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e3dc0360bb61a43acee3e66ca9b2d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfCoins: 6
-  obstaclePrebabMove: {fileID: 2180813997434928891, guid: 59d6c1a45d2b3d94ba3a3c78911f34ad, type: 3}
-  obstaclePrebabJump: {fileID: 433196449588269868, guid: 49ddc982dac09ad448c092d5aa96d6e5, type: 3}
-  Coins: {fileID: 8154208236542293945, guid: ab1232e3186f9af40b9222731643f6c8, type: 3}
 --- !u!1 &6383820085691155878
 GameObject:
   m_ObjectHideFlags: 0
