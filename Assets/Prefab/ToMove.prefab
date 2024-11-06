@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2612511782977369751}
   - component: {fileID: 9179773320399135345}
   - component: {fileID: 194173284622420510}
+  - component: {fileID: 1283145110452514693}
   m_Layer: 0
   m_Name: ToMove
   m_TagString: Obstacles
@@ -171,6 +172,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7766937, y: 0.51125634, z: 0.8917427}
   m_Center: {x: 1.0415591, y: 0.66013825, z: 0.19175324}
+--- !u!114 &1283145110452514693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180813997434928891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f207ba53d6869429fad05730881641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacle: {fileID: 2180813997434928891}
 --- !u!1001 &244576849733450250
 PrefabInstance:
   m_ObjectHideFlags: 0
