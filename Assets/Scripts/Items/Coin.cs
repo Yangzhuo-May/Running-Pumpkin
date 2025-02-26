@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, ISpawner
 {
-    // Start is called before the first frame update
     public GameObject coin;
     public Vector3 _rotation;
     public float turnSpeed = 90f;
@@ -22,18 +21,6 @@ public class Coin : MonoBehaviour, ISpawner
             Transform spawnPoint = coinsTransform.GetChild(i);
             CreateItems(spawnPoint.position, parent);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag != "Player")
-        {
-            return;
-        }
-
-        AudioSource.PlayClipAtPoint(collectSound, transform.position);
-        GameManager.inst.IncrementScore();
-        Destroy(gameObject);
     }
     
     void Update()

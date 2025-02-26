@@ -22,16 +22,21 @@ public class PlayerControl : MonoBehaviour
     private bool isGrounded = true;
     public bool isDead = false;
 
-    private Vector3 initialScale;
 
     private Rigidbody rb;
 
     private Animator animator;
 
     public GameObject gameoverScreen;
-    public AudioClip crashSound; 
+    public AudioClip crashSound;
+    public AudioClip evilLaugh;
 
     private bool isPlayed = false;
+
+    public float superSizeModeTime = 3f;
+    public bool isSuperSizeMode;
+    private float timeCount = 0;
+    private Vector3 initialScale;
 
     void Awake()
     {
@@ -47,18 +52,12 @@ public class PlayerControl : MonoBehaviour
     {
         actions.FindActionMap("Player").Enable();
         jump.performed += OnJump;
-
-    //     flatten.Enable();
-    //     flatten.performed += OnScale;
     }
 
     void OnDisable()
     {
         actions.FindActionMap("Player").Disable();
         jump.performed -= OnJump;
-
-        // flatten.Disable();
-        // flatten.performed -= OnScale;
     }
 
     void Start()
@@ -75,8 +74,20 @@ public class PlayerControl : MonoBehaviour
         Mathf.Clamp(transform.position.x, -4.5f, 4.5f), 
         transform.position.y, 
         transform.position.z
-    );
+        );
 
+        if (isSuperSizeMode)
+        {
+            timeCount += Time.deltaTime;
+
+            if (timeCount > superSizeModeTime)
+            {
+                timeCount = 0;
+                isSuperSizeMode = false;
+                EnableObjectsByTag("Star");
+                transform.localScale = initialScale;
+            }
+        }
     }
 
     private bool IsGrounded()
@@ -87,7 +98,6 @@ public class PlayerControl : MonoBehaviour
     private void MoveX()
     {
         float xMove = xAxis.ReadValue<float>();
-        Debug.Log($"{xMove}");
         transform.position += speed * Time.deltaTime * xMove * transform.right;
     }
 
@@ -99,7 +109,6 @@ public class PlayerControl : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump button pressed!");
         if (!IsGrounded()) return;
 
         Jump();
@@ -110,31 +119,78 @@ public class PlayerControl : MonoBehaviour
         rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
     }
 
-    private void OnScale(InputAction.CallbackContext context)
+    private void SuperSizeMode()
     {
-        if (Keyboard.current.downArrowKey.isPressed)
-        {
-            Vector3 newScale = transform.localScale;
-            // newScale.y *= scaleFactor;
-            // transform.localScale = newScale;
-            transform.localScale = new Vector3(1, 1/2, 1);
-        }
+        isSuperSizeMode = true;
+        transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        AudioSource.PlayClipAtPoint(evilLaugh, transform.position, 1.0f); 
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Obstacles")
         {
-            isDead = true;
-            speed = 0f;
-            jumpForce = 0f;
-            gameoverScreen.SetActive(true);
-            if(!isPlayed)
+            Rigidbody otherRigibody = other.gameObject.GetComponent<Rigidbody>();
+            if (isSuperSizeMode)
             {
-                AudioSource.PlayClipAtPoint(crashSound, transform.position);
+                otherRigibody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
             }
-            isPlayed = true;
+            else
+            {
+                isDead = true;
+                speed = 0f;
+                jumpForce = 0f;
+                gameoverScreen.SetActive(true);
+                if (!isPlayed)
+                {
+                    AudioSource.PlayClipAtPoint(crashSound, transform.position);
+                }
+                isPlayed = true;
+            }
+        }
+
+
+        if (other.gameObject.tag == "Coin")
+        {
+            Coin coin = other.gameObject.GetComponent<Coin>();
+            if (coin != null)
+            {
+                AudioSource.PlayClipAtPoint(coin.collectSound, transform.position);
+            }
+            GameManager.inst.IncrementScore();
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "Star")
+        {
+            Star star = other.gameObject.GetComponent<Star>();
+            if (star != null)
+            {
+                AudioSource.PlayClipAtPoint(star.collectSound, transform.position, 0.5f);
+            }
+
+            DisableObjectsByTag("Star");
+            SuperSizeMode();
+            Destroy(other.gameObject);
+        }
+    }
+    public void DisableObjectsByTag(string tag)
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tag);
+
+        foreach (GameObject obj in objectsWithTag)
+        {
+            obj.SetActive(false); 
         }
     }
 
+    public void EnableObjectsByTag(string tag)
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tag);
+
+        foreach (GameObject obj in objectsWithTag)
+        {
+            obj.SetActive(true);
+        }
+    }
 }

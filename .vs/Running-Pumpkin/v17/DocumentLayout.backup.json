@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\assets\\scripts\\environment\\itemsspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\environment\\itemsspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\assets\\scripts\\environment\\tilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\environment\\tilespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|c:\\users\\29351\\documents\\github\\running-pumpkin\\assets\\scripts\\player\\playercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|c:\\users\\29351\\documents\\github\\running-pumpkin\\assets\\scripts\\environment\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\environment\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|c:\\users\\29351\\documents\\github\\running-pumpkin\\assets\\scripts\\environment\\backgroundtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\environment\\backgroundtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\assets\\scripts\\items\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|c:\\users\\29351\\documents\\github\\running-pumpkin\\assets\\scripts\\items\\star.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\items\\star.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\assets\\scripts\\environment\\ispawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D61F005-2211-4F7A-52C8-FAFE52224455}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\environment\\ispawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Obstacle.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\Obstacle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Environment\\Obstacle.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\Obstacle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Environment\\Obstacle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T10:26:18.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerControl.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Player\\PlayerControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerControl.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Player\\PlayerControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerControl.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAApwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T10:00:18.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BackgroundTile.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\BackgroundTile.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Environment\\BackgroundTile.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\BackgroundTile.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Environment\\BackgroundTile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:12:40.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Coin.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Items\\Coin.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\Coin.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Items\\Coin.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Items\\Coin.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wBcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:06:32.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TileSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\TileSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Environment\\TileSpawner.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\TileSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Environment\\TileSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:06:23.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemsSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\ItemsSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Environment\\ItemsSpawner.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\ItemsSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Environment\\ItemsSpawner.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA7wEkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:05:57.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISpawner.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\ISpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Environment\\ISpawner.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Environment\\ISpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Environment\\ISpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:05:52.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Star.cs",
+              "DocumentMoniker": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Items\\Star.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Items\\Star.cs",
+              "ToolTip": "C:\\Users\\29351\\Documents\\GitHub\\Running-Pumpkin\\Assets\\Scripts\\Items\\Star.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Items\\Star.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T09:43:48.574Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

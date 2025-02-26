@@ -9,16 +9,9 @@ public class GameOverText : MonoBehaviour
     public TextMeshProUGUI  overText; 
     public GameManager gameManager;
     
-    // Start is called before the first frame update
     void Start()
     {
         DisplayScore();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void DisplayScore()

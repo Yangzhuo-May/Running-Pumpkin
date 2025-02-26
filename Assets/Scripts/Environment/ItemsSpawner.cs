@@ -10,6 +10,7 @@ public class ItemsSpawner : MonoBehaviour
 
     public int numberOfCoins = 6;
     [SerializeField] public Coin coin;
+    [SerializeField] public Star star;
     [SerializeField] public Obstacle[] obstacles;
 
     private Dictionary<int, string> coinsPosition = new Dictionary<int, string>
@@ -20,14 +21,13 @@ public class ItemsSpawner : MonoBehaviour
         { 3, "CoinRight" }
     };
 
-    // Start is called before the first frame update
     void Start()
     {
         tileSpawner = GameObject.FindObjectOfType<TileSpawner>();
         SpawnObstacle();
         SpawnCoin();
+        SpawnStar();
     }
-
     private void OnTriggerExit (Collider other)
     {
         if (!hasSpawned)
@@ -37,12 +37,6 @@ public class ItemsSpawner : MonoBehaviour
             isJumpObstacle = false;
             Destroy(gameObject, 3f);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SpawnObstacle()
@@ -66,5 +60,12 @@ public class ItemsSpawner : MonoBehaviour
         string position = coinsPosition[number];
         Transform coinsTransform = transform.Find(position);
         coin.SpawnCoins(coinsTransform, transform);
+    }
+
+    void SpawnStar()
+    {
+        float randomValue = Random.Range(0f, 1f);
+
+        star.SpawnStar(transform.GetChild(10));
     }
 }

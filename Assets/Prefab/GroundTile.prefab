@@ -224,6 +224,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6627061888244781807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1247584443907642192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2726791513934078639}
+  m_Layer: 0
+  m_Name: Award
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2726791513934078639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247584443907642192}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.55, z: 19.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6627061888244781807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445168199780527697
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +889,7 @@ Transform:
   - {fileID: 7200158603401369453}
   - {fileID: 2627485392294820387}
   - {fileID: 7093462706448850734}
+  - {fileID: 2726791513934078639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8132040273863375608
@@ -887,9 +919,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfCoins: 6
   coin: {fileID: 2773067964999226825, guid: ab1232e3186f9af40b9222731643f6c8, type: 3}
+  star: {fileID: 2935081959493821532, guid: e6dc98ec00992b34482b1fda4b9bfdd2, type: 3}
   obstacles:
   - {fileID: -2049920938280980869, guid: 49ddc982dac09ad448c092d5aa96d6e5, type: 3}
   - {fileID: 1283145110452514693, guid: 59d6c1a45d2b3d94ba3a3c78911f34ad, type: 3}
+  playerControl: {fileID: 8651510833008651487, guid: 713b800dbcec68c43bc493dac799c736, type: 3}
 --- !u!65 &8296870745723906599
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour, ISpawner
 {
-    // Start is called before the first frame update
     public GameObject obstacle;
     public GameObject CreateItems(Vector3 position, Transform parent = null)
     {

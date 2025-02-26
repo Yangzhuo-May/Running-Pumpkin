@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 {
     int score;
     public static GameManager inst;
-    //public Text scoreTest;
     public Button GamePlayButton;
     public TextMeshProUGUI  scoreTest; 
     public PlayerControl playerControl;
@@ -25,14 +24,11 @@ public class GameManager : MonoBehaviour
     {
         inst = this;
     }
-    // Start is called before the first frame update
     void Start()
     {
         playerControl = GameObject.FindWithTag("Player").GetComponent<PlayerControl>();
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         float playerSpeed = playerControl.speed;
@@ -46,9 +42,4 @@ public class GameManager : MonoBehaviour
     {
         return score;
     }
-
-    void TaskOnClick()
-    {
-		
-	}
 }

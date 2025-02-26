@@ -11,13 +11,11 @@ public class MenuManager : MonoBehaviour
     public GameObject gameStartScreen;
     public GameObject gameOverScreen;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!gameStarted && Input.GetKeyDown(KeyCode.Return))
@@ -28,16 +26,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void Setup()
-    {
-        
-    }
-
     public void StartGame()
     {
         gameStarted = true;
         SceneManager.LoadScene("Game");  
     }
-
-    
 }
