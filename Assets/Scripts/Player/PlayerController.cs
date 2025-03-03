@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public InputActionAsset actions;
-    private InputAction xAxis;
-    private InputAction zAxis;
-
-    private InputAction jump;
-
-    private InputAction flatten;
+    private InputsManager inputManager;
 
     public float speed = 1f;
     public float jumpForce = 5f;
 
     public float scaleFactor = 0.5f;
 
-    private bool isGrounded = true;
     public bool isDead = false;
+    private bool isGrounded;
 
 
     private Rigidbody rb;
@@ -36,28 +31,18 @@ public class PlayerControl : MonoBehaviour
     public float superSizeModeTime = 3f;
     public bool isSuperSizeMode;
     private float timeCount = 0;
+    
     private Vector3 initialScale;
+    private Vector3 SuperModeScale = new Vector3(2.5f, 2.5f, 2.5f);
 
+    private const string STAR_TAG = "Star";
+    private const string OBSTACLE_TAG = "Obstacles";
+    private const string COIN_TAG = "Coin";
     void Awake()
     {
-        xAxis = actions.FindActionMap("Player").FindAction("Move");
-        jump = actions.FindActionMap("Player").FindAction("Jump");
-        flatten = actions.FindActionMap("Player").FindAction("Flatten");
+        inputManager = GetComponent<InputsManager>();
         rb = GetComponent<Rigidbody>(); 
-
         initialScale = transform.localScale;
-    }
-
-    void OnEnable()
-    {
-        actions.FindActionMap("Player").Enable();
-        jump.performed += OnJump;
-    }
-
-    void OnDisable()
-    {
-        actions.FindActionMap("Player").Disable();
-        jump.performed -= OnJump;
     }
 
     void Start()
@@ -84,20 +69,38 @@ public class PlayerControl : MonoBehaviour
             {
                 timeCount = 0;
                 isSuperSizeMode = false;
-                EnableObjectsByTag("Star");
+                EnableObjectsByTag(STAR_TAG);
                 transform.localScale = initialScale;
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == OBSTACLE_TAG)
+        {
+            Rigidbody otherRigibody = other.gameObject.GetComponent<Rigidbody>();
+            HandlePlayerObstacleInteraction(otherRigibody);
+        }
 
-    private bool IsGrounded()
+        if (other.gameObject.tag == COIN_TAG)
+        {
+            CollectCoins(other);
+        }
+
+        if (other.gameObject.tag == STAR_TAG)
+        {
+            TriggerSuperMode(other);
+        }
+    }
+
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, 1f);
     }
 
     private void MoveX()
     {
-        float xMove = xAxis.ReadValue<float>();
+        float xMove = inputManager.GetMoveValue();
         transform.position += speed * Time.deltaTime * xMove * transform.right;
     }
 
@@ -106,15 +109,8 @@ public class PlayerControl : MonoBehaviour
         transform.position += speed * Time.deltaTime * transform.forward;
         isGrounded = false;
     }
-
-    private void OnJump(InputAction.CallbackContext context)
-    {
-        if (!IsGrounded()) return;
-
-        Jump();
-    }
     
-    private void Jump()
+    public void Jump()
     {
         rb.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
     }
@@ -122,58 +118,54 @@ public class PlayerControl : MonoBehaviour
     private void SuperSizeMode()
     {
         isSuperSizeMode = true;
-        transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        transform.localScale = SuperModeScale;
         AudioSource.PlayClipAtPoint(evilLaugh, transform.position, 1.0f); 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void HandlePlayerObstacleInteraction(Rigidbody otherRigibody)
     {
-        if (other.gameObject.tag == "Obstacles")
+        if (isSuperSizeMode)
         {
-            Rigidbody otherRigibody = other.gameObject.GetComponent<Rigidbody>();
-            if (isSuperSizeMode)
-            {
-                otherRigibody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
-            }
-            else
-            {
-                isDead = true;
-                speed = 0f;
-                jumpForce = 0f;
-                gameoverScreen.SetActive(true);
-                if (!isPlayed)
-                {
-                    AudioSource.PlayClipAtPoint(crashSound, transform.position);
-                }
-                isPlayed = true;
-            }
+            otherRigibody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
         }
-
-
-        if (other.gameObject.tag == "Coin")
+        else
         {
-            Coin coin = other.gameObject.GetComponent<Coin>();
-            if (coin != null)
+            isDead = true;
+            speed = 0f;
+            jumpForce = 0f;
+            gameoverScreen.SetActive(true);
+            if (!isPlayed)
             {
-                AudioSource.PlayClipAtPoint(coin.collectSound, transform.position);
+                AudioSource.PlayClipAtPoint(crashSound, transform.position);
             }
-            GameManager.inst.IncrementScore();
-            Destroy(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "Star")
-        {
-            Star star = other.gameObject.GetComponent<Star>();
-            if (star != null)
-            {
-                AudioSource.PlayClipAtPoint(star.collectSound, transform.position, 0.5f);
-            }
-
-            DisableObjectsByTag("Star");
-            SuperSizeMode();
-            Destroy(other.gameObject);
+            isPlayed = true;
         }
     }
+
+    private void CollectCoins(Collider other)
+    {
+        Coin coin = other.gameObject.GetComponent<Coin>();
+        if (coin != null)
+        {
+            AudioSource.PlayClipAtPoint(coin.collectSound, transform.position);
+        }
+        GameManager.inst.IncrementScore();
+        Destroy(other.gameObject);
+    }
+
+    private void TriggerSuperMode(Collider other)
+    {
+        Star star = other.gameObject.GetComponent<Star>();
+        if (star != null)
+        {
+            AudioSource.PlayClipAtPoint(star.collectSound, transform.position, 0.5f);
+        }
+
+        DisableObjectsByTag(STAR_TAG);
+        SuperSizeMode();
+        Destroy(other.gameObject);
+    }
+
     public void DisableObjectsByTag(string tag)
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tag);

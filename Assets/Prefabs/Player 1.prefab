@@ -74,41 +74,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8651510833008651487}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8543304828997037291}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4498956802222934054}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4617725600981615311}
   m_SourcePrefab: {fileID: 100100000, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
 --- !u!1 &992980761582563010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b0fb97417eecb24abcd6f6d243a3713, type: 3}
   m_PrefabInstance: {fileID: 73939323344507795}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8651510833008651487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992980761582563010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8739d6c47e84b134d95b1a59695ef517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions: {fileID: -944628639613478452, guid: bb626440ded85324a850aacfa326d0c9, type: 3}
-  speed: 10
-  jumpForce: 18
-  scaleFactor: 0.5
-  isDead: 0
-  gameoverScreen: {fileID: 0}
-  crashSound: {fileID: 8300000, guid: 7b63e088b0ccddc43aa6746ef4c07b07, type: 3}
-  evilLaugh: {fileID: 8300000, guid: ef0729162715e4941af146cb038a6c86, type: 3}
-  superSizeModeTime: 5
-  isSuperSizeMode: 0
 --- !u!54 &8543304828997037291
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,3 +135,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8437471, y: 1.6585338, z: 1.8849046}
   m_Center: {x: 0.030869007, y: 0.782009, z: -0.07202709}
+--- !u!114 &4617725600981615311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992980761582563010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96c31f874424fb4e9ef7f5cc28cce4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: {fileID: 0}
+  speed: 1
+  jumpForce: 5
+  scaleFactor: 0.5
+  isDead: 0
+  gameoverScreen: {fileID: 0}
+  crashSound: {fileID: 0}
+  evilLaugh: {fileID: 0}
+  superSizeModeTime: 3
+  isSuperSizeMode: 0

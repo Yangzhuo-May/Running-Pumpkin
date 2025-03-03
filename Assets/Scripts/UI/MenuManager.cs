@@ -11,17 +11,11 @@ public class MenuManager : MonoBehaviour
     public GameObject gameStartScreen;
     public GameObject gameOverScreen;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (!gameStarted && Input.GetKeyDown(KeyCode.Return))
         {
             gameStartScreen.SetActive(false);
-            // Start_Image.enabled = false;
             StartGame();
         }
     }

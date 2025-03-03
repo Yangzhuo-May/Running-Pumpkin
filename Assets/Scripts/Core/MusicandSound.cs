@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicandSound : MonoBehaviour
 {
-    public PlayerControl player;
+    public PlayerController player;
     public AudioSource bgmAudioSource;
     private bool hasReducedVolume = false;
     

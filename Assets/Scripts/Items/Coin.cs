@@ -8,6 +8,10 @@ public class Coin : MonoBehaviour, ISpawner
     public Vector3 _rotation;
     public float turnSpeed = 90f;
     public AudioClip collectSound;
+    void Update()
+    {
+        transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
+    }
 
     public GameObject CreateItems(Vector3 position, Transform parent = null)
     {
@@ -23,8 +27,4 @@ public class Coin : MonoBehaviour, ISpawner
         }
     }
     
-    void Update()
-    {
-        transform.Rotate(0, 0, turnSpeed * Time.deltaTime);
-    }
 }
