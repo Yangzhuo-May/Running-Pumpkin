@@ -10,9 +10,8 @@ public class GameManager : MonoBehaviour
 {
     int score;
     public static GameManager inst;
-    public Button GamePlayButton;
     public TextMeshProUGUI  scoreTest; 
-    public PlayerController playerController;
+    private PlayerController playerController;
 
     private const string GAME_SENCE = "Game";
     private const string PLAYER_TAG = "Player";

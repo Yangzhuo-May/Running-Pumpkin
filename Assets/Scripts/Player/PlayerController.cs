@@ -63,23 +63,14 @@ public class PlayerController : MonoBehaviour
 
         if (isSuperSizeMode)
         {
-            timeCount += Time.deltaTime;
-
-            if (timeCount > superSizeModeTime)
-            {
-                timeCount = 0;
-                isSuperSizeMode = false;
-                EnableObjectsByTag(STAR_TAG);
-                transform.localScale = initialScale;
-            }
+            UpdateSuperSizeMode();
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == OBSTACLE_TAG)
         {
-            Rigidbody otherRigibody = other.gameObject.GetComponent<Rigidbody>();
-            HandlePlayerObstacleInteraction(otherRigibody);
+            HandlePlayerObstacleInteraction(other);
         }
 
         if (other.gameObject.tag == COIN_TAG)
@@ -119,11 +110,12 @@ public class PlayerController : MonoBehaviour
     {
         isSuperSizeMode = true;
         transform.localScale = SuperModeScale;
-        AudioSource.PlayClipAtPoint(evilLaugh, transform.position, 1.0f); 
+        AudioSource.PlayClipAtPoint(evilLaugh, transform.position, 1.0f);
     }
 
-    private void HandlePlayerObstacleInteraction(Rigidbody otherRigibody)
+    private void HandlePlayerObstacleInteraction(Collider other)
     {
+        Rigidbody otherRigibody = other.gameObject.GetComponent<Rigidbody>();
         if (isSuperSizeMode)
         {
             otherRigibody.AddForce(jumpForce * Vector3.up, ForceMode.Impulse);
@@ -164,6 +156,19 @@ public class PlayerController : MonoBehaviour
         DisableObjectsByTag(STAR_TAG);
         SuperSizeMode();
         Destroy(other.gameObject);
+    }
+
+    private void UpdateSuperSizeMode()
+    {
+        timeCount += Time.deltaTime;
+
+        if (timeCount > superSizeModeTime)
+        {
+            timeCount = 0;
+            isSuperSizeMode = false;
+            EnableObjectsByTag(STAR_TAG);
+            transform.localScale = initialScale;
+        }
     }
 
     public void DisableObjectsByTag(string tag)

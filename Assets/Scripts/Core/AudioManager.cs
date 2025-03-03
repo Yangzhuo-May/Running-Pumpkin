@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicandSound : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public PlayerController player;
     public AudioSource bgmAudioSource;
